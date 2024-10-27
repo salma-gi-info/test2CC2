@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import about, index, collec_detail, collection_list, add_collection,delete_collection  # Importation correcte
+from .views import about, index, collec_detail, collection_list, add_collection,delete_collection,edit_collection # Importation correcte
 
 urlpatterns = [
     path('', index, name='index'),
@@ -8,6 +8,7 @@ urlpatterns = [
     path('all/', collection_list, name='collection_list'),
     path('new/', add_collection, name='add_collection'),
     path('delete/<int:id>/', delete_collection, name='delete_collection'),
+     path('change/<int:id>/', edit_collection, name='edit_collection'),
 ]
 
 

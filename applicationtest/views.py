@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404  # Importation en haut
 from .models import Collec
+from .forms import CollecForm
+from django.urls import reverse
 # Création des vues
 def index(request):
     return render(request, 'index.html')
@@ -39,3 +41,15 @@ def delete_collection(request, id):
         collection.delete()
         return redirect('collection_list')  # Redirige vers la liste des collections après suppression
     return render(request, 'delete_collection.html', {'collection': collection})
+
+
+def edit_collection(request, id):
+    collection = get_object_or_404(Collec, id=id)
+    if request.method == 'POST':
+        form = CollecForm(request.POST, instance=collection)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('collection_list'))
+    else:
+        form = CollecForm(instance=collection)
+    return render(request, 'edit_collection.html', {'form': form, 'collection': collection})

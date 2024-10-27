@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier la Collection</title>
+</head>
+<body>
+    <h1>Modifier la Collection : {{ collection.title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer les modifications</button>
+        <a href="{% url 'collection_list' %}">Annuler</a>
+    </form>
+</body>
+</html>

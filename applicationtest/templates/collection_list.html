@@ -19,6 +19,7 @@
             <td>
                 <a href="{% url 'collec_detail' collection.id %}">Détails</a> |
                 <a href="{% url 'delete_collection' collection.id %}">Supprimer</a>
+                <a href="{% url 'edit_collection' collection.id %}">Modifier</a>
             </td>
         </tr>
         {% endfor %}
