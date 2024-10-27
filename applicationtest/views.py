@@ -53,3 +53,9 @@ def edit_collection(request, id):
     else:
         form = CollecForm(instance=collection)
     return render(request, 'edit_collection.html', {'form': form, 'collection': collection})
+
+from django.shortcuts import render
+
+
+def base_view(request):
+    return render(request, 'base.html')  # Ensure you have a base.html template

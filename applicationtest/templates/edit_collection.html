@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Modifier la Collection</title>
-</head>
-<body>
-    <h1>Modifier la Collection : {{ collection.title }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Enregistrer les modifications</button>
-        <a href="{% url 'collection_list' %}">Annuler</a>
-    </form>
-</body>
-</html>
+<!-- templates/edit_collection.html -->
+{% extends 'base.html' %}
+
+{% block title %}Modifier la Collection{% endblock %}
+
+{% block content %}
+<h1>Modifier la Collection : {{ collection.title }}</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Enregistrer les modifications</button>
+    <a href="{% url 'collection_list' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
