@@ -32,3 +32,10 @@ def add_collection(request):
     else:
         form = CollecForm()
     return render(request, 'add_collection.html', {'form': form})
+
+def delete_collection(request, id):
+    collection = get_object_or_404(Collec, id=id)
+    if request.method == 'POST':
+        collection.delete()
+        return redirect('collection_list')  # Redirige vers la liste des collections après suppression
+    return render(request, 'delete_collection.html', {'collection': collection})
