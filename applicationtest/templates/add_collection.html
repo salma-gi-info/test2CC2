@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvelle Collection</title>
+</head>
+<body>
+    <h1>Ajouter une Nouvelle Collection</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ajouter la Collection</button>
+    </form>
+    <a href="{% url 'collection_list' %}">Retour à la liste des collections</a>
+</body>
+</html>
