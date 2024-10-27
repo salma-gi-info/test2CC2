@@ -1,0 +1,16 @@
+<!-- applicationtest/templates/collection_detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de la Collection</title>
+</head>
+<body>
+    <h1>Détails de la Collection</h1>
+    <p><strong>Title:</strong> {{ collection.title }}</p>
+    <p><strong>Description:</strong> {{ collection.description }}</p>
+    <p><strong>Date de Création:</strong> {{ collection.date }}</p>
+    <a href="{% url 'index' %}">Retour à l'accueil</a>
+</body>
+</html>
